@@ -1,6 +1,15 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+	faHome,
+	faPaperPlane,
+	faSearch,
+	faBell,
+	faPerson,
+	faKey,
+	faCircleQuestion,
+	faArrowRightFromBracket,
+} from '@fortawesome/free-solid-svg-icons';
 import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
@@ -10,8 +19,29 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import logo from '~/assets/icons/logo.png';
 import avatar from '~/assets/images/avatar.jpg';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+	{
+		icon: <FontAwesomeIcon icon={faPerson} />,
+		title: 'View profile',
+	},
+	{
+		icon: <FontAwesomeIcon icon={faKey} />,
+		title: 'Change password',
+	},
+	{
+		icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+		title: 'Feedback and help',
+	},
+	{
+		icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+		title: 'Log out',
+		to: '/login',
+	},
+];
 
 function Header({ active }) {
 	const [searchResult, setsearchResult] = useState([]);
@@ -64,30 +94,20 @@ function Header({ active }) {
 				</li>
 			</ul>
 
-			<div className={cx('actions')}>
-				<Tippy
-					interactive
-					visible={searchResult.length > 0}
-					render={(attrs) => (
-						<PopperWrapper>
-							<div className={cx('search__result')} tabIndex='-1' {...attrs}>
-								<h4 className={cx('search__result-title')}>Account</h4>
-								<AccountItem />
-								<AccountItem />
-								<AccountItem />
-								<AccountItem />
-							</div>
-						</PopperWrapper>
-					)}
-				>
-					<div className={cx('actions__personal')}>
-						<img
-							className={cx('actions__personal-avatar')}
-							src={avatar}
-							alt='avatar'
-						/>
-					</div>
-				</Tippy>
+			<div className={cx('action')}>
+				<button className={cx('action__btn')}>
+					<FontAwesomeIcon icon={faBell} />
+				</button>
+				<button className={cx('action__btn')}>
+					<FontAwesomeIcon icon={faPaperPlane} />
+				</button>
+				<Menu items={MENU_ITEMS}>
+					<img
+						className={cx('action__personal-avatar')}
+						src={avatar}
+						alt='avatar'
+					/>
+				</Menu>
 			</div>
 		</header>
 	);

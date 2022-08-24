@@ -1,10 +1,10 @@
 .wrapper {
 	height: 60px;
 	padding: 0 16px;
-	box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
 	background-color: rgb(255, 255, 255);
 
 	.logo {
@@ -74,22 +74,29 @@
 
 		.control__item {
 			margin-right: 5px;
-			font-size: 2.8rem;
+			font-size: 2.3rem;
 			padding: 5px 18px;
 		}
 	}
 
-	.actions {
+	.action {
 		display: flex;
 		align-items: center;
-		.actions__personal {
-			display: flex;
-			.actions__personal-avatar {
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-				object-fit: cover;
-			}
+
+		.action__btn {
+			font-size: 2.3rem;
+			background-color: transparent;
+			color: #161819;
+			padding: 4px 12px;
+			cursor: pointer;
+		}
+
+		.action__personal-avatar {
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-left: 8px;
 		}
 	}
 }

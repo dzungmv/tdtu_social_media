@@ -10,7 +10,7 @@ function Button({
 	primary = false,
 	outline = false,
 	text = false,
-	disable,
+	disable = false,
 	small = false,
 	large = false,
 	children,
