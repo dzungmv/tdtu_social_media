@@ -80,6 +80,8 @@
 	}
 
 	.actions {
+		display: flex;
+		align-items: center;
 		.actions__personal {
 			display: flex;
 			.actions__personal-avatar {

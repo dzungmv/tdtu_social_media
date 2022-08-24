@@ -10,6 +10,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import logo from '~/assets/icons/logo.png';
 import avatar from '~/assets/images/avatar.jpg';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -72,6 +73,8 @@ function Header({ active }) {
 						alt='avatar'
 					/>
 				</div>
+
+				<Button primary>Log in</Button>
 			</div>
 		</header>
 	);
