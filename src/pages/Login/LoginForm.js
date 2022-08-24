@@ -5,9 +5,10 @@ import googleIcon from '~/assets/icons/google.png';
 
 const cx = classNames.bind(styles);
 
-function LoginForm() {
-	const handleClick = () => {};
-
+function LoginForm({ setForm }) {
+	const handleClick = () => {
+		setForm(false);
+	};
 	return (
 		<div>
 			<input

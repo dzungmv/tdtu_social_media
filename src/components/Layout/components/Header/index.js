@@ -10,7 +10,6 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import logo from '~/assets/icons/logo.png';
 import avatar from '~/assets/images/avatar.jpg';
 import AccountItem from '~/components/AccountItem';
-import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -66,15 +65,29 @@ function Header({ active }) {
 			</ul>
 
 			<div className={cx('actions')}>
-				<div className={cx('actions__personal')}>
-					<img
-						className={cx('actions__personal-avatar')}
-						src={avatar}
-						alt='avatar'
-					/>
-				</div>
-
-				<Button primary>Log in</Button>
+				<Tippy
+					interactive
+					visible={searchResult.length > 0}
+					render={(attrs) => (
+						<PopperWrapper>
+							<div className={cx('search__result')} tabIndex='-1' {...attrs}>
+								<h4 className={cx('search__result-title')}>Account</h4>
+								<AccountItem />
+								<AccountItem />
+								<AccountItem />
+								<AccountItem />
+							</div>
+						</PopperWrapper>
+					)}
+				>
+					<div className={cx('actions__personal')}>
+						<img
+							className={cx('actions__personal-avatar')}
+							src={avatar}
+							alt='avatar'
+						/>
+					</div>
+				</Tippy>
 			</div>
 		</header>
 	);

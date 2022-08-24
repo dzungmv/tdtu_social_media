@@ -4,10 +4,14 @@ import styles from './Login.module.scss';
 import logo from '~/assets/icons/logo.png';
 import loginVector from '~/assets/icons/login.png';
 import LoginForm from './LoginForm';
+import ForgotForm from './ForgotForm';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Login() {
+	const [form, setForm] = useState(true);
+
 	return (
 		<div className={cx('wrapper')}>
 			<div className={cx('grid', 'wide')}>
@@ -24,7 +28,11 @@ function Login() {
 					</div>
 
 					<div className={cx('col', 'l-5', 'login')}>
-						<LoginForm />
+						{form ? (
+							<LoginForm setForm={setForm} />
+						) : (
+							<ForgotForm setForm={setForm} />
+						)}
 					</div>
 				</div>
 			</div>
