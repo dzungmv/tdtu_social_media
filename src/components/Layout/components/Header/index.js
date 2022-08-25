@@ -5,27 +5,29 @@ import {
 	faPaperPlane,
 	faSearch,
 	faBell,
-	faPerson,
 	faKey,
 	faCircleQuestion,
 	faArrowRightFromBracket,
+	faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
-import Tippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import TippyHeadless from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css';
 import { useEffect, useState } from 'react';
 
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import logo from '~/assets/icons/logo.png';
-import avatar from '~/assets/images/avatar.jpg';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
 	{
-		icon: <FontAwesomeIcon icon={faPerson} />,
+		icon: <FontAwesomeIcon icon={faUser} />,
 		title: 'View profile',
 	},
 	{
@@ -40,6 +42,7 @@ const MENU_ITEMS = [
 		icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
 		title: 'Log out',
 		to: '/login',
+		separate: true,
 	},
 ];
 
@@ -58,7 +61,7 @@ function Header({ active }) {
 				<a href='/'>
 					<img className={cx('logo__img')} src={logo} alt='TDT' />
 				</a>
-				<Tippy
+				<TippyHeadless
 					interactive
 					visible={searchResult.length > 0}
 					render={(attrs) => (
@@ -80,7 +83,7 @@ function Header({ active }) {
 							placeholder='Search something...'
 						/>
 					</div>
-				</Tippy>
+				</TippyHeadless>
 			</div>
 
 			<ul className={cx('control')}>
@@ -95,16 +98,21 @@ function Header({ active }) {
 			</ul>
 
 			<div className={cx('action')}>
-				<button className={cx('action__btn')}>
+				<button className={cx('action__btn', 'control__noti')}>
 					<FontAwesomeIcon icon={faBell} />
+					<span className={cx('control__count')}>69</span>
 				</button>
-				<button className={cx('action__btn')}>
-					<FontAwesomeIcon icon={faPaperPlane} />
-				</button>
+
+				<Tippy content='Messenger' placement='bottom' delay={[0, 200]}>
+					<button className={cx('action__btn', 'control__messenger')}>
+						<FontAwesomeIcon icon={faPaperPlane} />
+						<span className={cx('control__count')}>12</span>
+					</button>
+				</Tippy>
 				<Menu items={MENU_ITEMS}>
-					<img
+					<Image
 						className={cx('action__personal-avatar')}
-						src={avatar}
+						src={''}
 						alt='avatar'
 					/>
 				</Menu>

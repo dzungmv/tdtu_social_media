@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
-import avatar from '~/assets/images/avatar.jpg';
+import avatar from '~/assets/images/avatar.jpeg';
 
 const cx = classNames.bind(styles);
 

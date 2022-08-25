@@ -74,7 +74,7 @@
 
 		.control__item {
 			margin-right: 5px;
-			font-size: 2.3rem;
+			font-size: 2.5rem;
 			padding: 5px 18px;
 		}
 	}
@@ -84,19 +84,45 @@
 		align-items: center;
 
 		.action__btn {
-			font-size: 2.3rem;
+			font-size: 2.5rem;
 			background-color: transparent;
-			color: #161819;
 			padding: 4px 12px;
 			cursor: pointer;
+
+			.action__font-awesome {
+				background-color: transparent;
+				color: var(--primary-color);
+			}
+		}
+
+		.control__noti {
+			position: relative;
+		}
+
+		.control__messenger {
+			position: relative;
+		}
+
+		.control__count {
+			position: absolute;
+			top: 0px;
+			right: 5px;
+			font-size: 1.2rem;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			color: #fff;
+			line-height: 18px;
+			background-color: var(--primary-color);
 		}
 
 		.action__personal-avatar {
+			cursor: pointer;
 			width: 35px;
 			height: 35px;
 			border-radius: 50%;
 			object-fit: cover;
-			margin-left: 8px;
+			margin-left: 12px;
 		}
 	}
 }

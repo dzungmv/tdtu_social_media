@@ -12,6 +12,8 @@ const cx = classNames.bind(styles);
 function Login() {
 	const [form, setForm] = useState(true);
 
+	console.log('re-render');
+
 	return (
 		<div className={cx('wrapper')}>
 			<div className={cx('grid', 'wide')}>
