@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faHome,
@@ -46,19 +47,19 @@ function Header({ active }) {
 	return (
 		<header className={cx('wrapper')}>
 			<div className={cx('logo')}>
-				<a href='/'>
+				<Link to={'/'}>
 					<img className={cx('logo__img')} src={logo} alt='TDT' />
-				</a>
+				</Link>
 
 				<Search />
 			</div>
 
 			<ul className={cx('control')}>
-				<a href='/'>
+				<Link to={'/'}>
 					<li className={cx('control__item', { active })}>
 						<FontAwesomeIcon icon={faHome} />
 					</li>
-				</a>
+				</Link>
 				<li className={cx('control__item')}>
 					<FontAwesomeIcon icon={faAccusoft} />
 				</li>

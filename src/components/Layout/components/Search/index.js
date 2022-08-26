@@ -4,8 +4,10 @@ import TippyHeadless from '@tippyjs/react/headless';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useDebounce } from '~/hooks';
 import classNames from 'classnames/bind';
 
+import { search } from '~/apiServices/searchService';
 import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
@@ -15,18 +17,20 @@ function Search() {
 	const [searchResult, setsearchResult] = useState([]);
 	const [showResult, setShowResult] = useState(true);
 
+	const debounce = useDebounce(searchValue, 500);
+
 	useEffect(() => {
-		if (!searchValue.trim()) {
+		if (!debounce.trim()) {
 			return;
 		}
-		fetch(
-			`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-				searchValue
-			)}&type=less`
-		)
-			.then((res) => res.json())
-			.then((res) => setsearchResult(res.data));
-	}, [searchValue]);
+
+		const fetchApi = async () => {
+			const result = await search(debounce);
+			setsearchResult(result);
+		};
+
+		fetchApi();
+	}, [debounce]);
 
 	const handleHideResult = () => {
 		setShowResult(false);
