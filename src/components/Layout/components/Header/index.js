@@ -1,6 +1,9 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
 import {
 	faHome,
 	faPaperPlane,
@@ -10,10 +13,8 @@ import {
 	faArrowRightFromBracket,
 	faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
+import routesConfig from '~/config/routes';
 import styles from './Header.module.scss';
 import logo from '~/assets/icons/logo.png';
 import Menu from '~/components/Popper/Menu';
@@ -38,7 +39,7 @@ const MENU_ITEMS = [
 	{
 		icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
 		title: 'Log out',
-		to: '/login',
+		to: routesConfig.login,
 		separate: true,
 	},
 ];
@@ -47,7 +48,7 @@ function Header({ active }) {
 	return (
 		<header className={cx('wrapper')}>
 			<div className={cx('logo')}>
-				<Link to={'/'}>
+				<Link to={routesConfig.home}>
 					<img className={cx('logo__img')} src={logo} alt='TDT' />
 				</Link>
 
@@ -55,7 +56,7 @@ function Header({ active }) {
 			</div>
 
 			<ul className={cx('control')}>
-				<Link to={'/'}>
+				<Link to={routesConfig.home}>
 					<li className={cx('control__item', { active })}>
 						<FontAwesomeIcon icon={faHome} />
 					</li>

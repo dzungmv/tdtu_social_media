@@ -1,25 +1,23 @@
+import routesCofig from '~/config/routes';
+
 import Home from '~/pages/Home';
-import Following from '~/pages/Following';
 import Login from '~/pages/Login';
-import Alone from '~/pages/Alone';
+import Search from '~/pages/Search';
 
 const publicRoutes = [
 	{
-		path: '/',
+		path: routesCofig.home,
 		component: Home,
 	},
+
 	{
-		path: '/following',
-		component: Following,
-	},
-	{
-		path: 'login',
+		path: routesCofig.login,
 		component: Login,
 		layout: null,
 	},
 	{
-		path: '/alone-page',
-		component: Alone,
+		path: routesCofig.search,
+		component: Search,
 		layout: null,
 	},
 ];
