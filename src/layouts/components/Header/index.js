@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/perspective.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -14,7 +15,7 @@ import {
 	faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import styles from './Header.module.scss';
 import logo from '~/assets/icons/logo.png';
 import Menu from '~/components/Popper/Menu';
@@ -39,7 +40,7 @@ const MENU_ITEMS = [
 	{
 		icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
 		title: 'Log out',
-		to: routesConfig.login,
+		to: config.routes.login,
 		separate: true,
 	},
 ];
@@ -48,7 +49,7 @@ function Header({ active }) {
 	return (
 		<header className={cx('wrapper')}>
 			<div className={cx('logo')}>
-				<Link to={routesConfig.home}>
+				<Link to={config.routes.home}>
 					<img className={cx('logo__img')} src={logo} alt='TDT' />
 				</Link>
 
@@ -56,10 +57,17 @@ function Header({ active }) {
 			</div>
 
 			<ul className={cx('control')}>
-				<Link to={routesConfig.home}>
-					<li className={cx('control__item', { active })}>
-						<FontAwesomeIcon icon={faHome} />
-					</li>
+				<Link to={config.routes.home}>
+					<Tippy
+						content='Home'
+						delay={[0, 150]}
+						placement='bottom'
+						animation='perspective'
+					>
+						<li className={cx('control__item', { active })}>
+							<FontAwesomeIcon icon={faHome} />
+						</li>
+					</Tippy>
 				</Link>
 				<li className={cx('control__item')}>
 					<FontAwesomeIcon icon={faAccusoft} />
@@ -72,7 +80,12 @@ function Header({ active }) {
 					<span className={cx('control__count')}>69</span>
 				</button>
 
-				<Tippy content='Messenger' placement='bottom' delay={[0, 200]}>
+				<Tippy
+					content='Messenger'
+					placement='bottom'
+					delay={[0, 150]}
+					animation='perspective'
+				>
 					<button className={cx('action__btn', 'control__messenger')}>
 						<FontAwesomeIcon icon={faPaperPlane} />
 						<span className={cx('control__count')}>12</span>

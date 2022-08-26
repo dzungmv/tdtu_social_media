@@ -1,4 +1,4 @@
-import routesCofig from '~/config/routes';
+import config from '~/config';
 
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
@@ -6,17 +6,17 @@ import Search from '~/pages/Search';
 
 const publicRoutes = [
 	{
-		path: routesCofig.home,
+		path: config.routes.home,
 		component: Home,
 	},
 
 	{
-		path: routesCofig.login,
+		path: config.routes.login,
 		component: Login,
 		layout: null,
 	},
 	{
-		path: routesCofig.search,
+		path: config.routes.search,
 		component: Search,
 		layout: null,
 	},
