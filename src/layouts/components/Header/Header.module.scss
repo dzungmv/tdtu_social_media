@@ -24,25 +24,6 @@
 		}
 	}
 
-	.control {
-		list-style: none;
-		display: flex;
-
-		.active {
-			background-color: rgb(241, 243, 245);
-			color: var(--primary-color);
-			border-radius: 8px;
-		}
-
-		.control__item {
-			display: flex;
-			justify-content: center;
-			margin-right: 5px;
-			font-size: 2.3rem;
-			padding: 10px 20px;
-		}
-	}
-
 	.action {
 		display: flex;
 		align-items: center;
@@ -59,15 +40,15 @@
 			}
 		}
 
-		.control__noti {
+		.action__noti {
 			position: relative;
 		}
 
-		.control__messenger {
+		.action__messenger {
 			position: relative;
 		}
 
-		.control__count {
+		.action__count {
 			position: absolute;
 			top: 0px;
 			right: 5px;

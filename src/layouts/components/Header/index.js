@@ -4,9 +4,8 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/perspective.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
+
 import {
-	faHome,
 	faPaperPlane,
 	faBell,
 	faKey,
@@ -21,6 +20,7 @@ import logo from '~/assets/icons/logo.png';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Search from '../Search';
+import Control from '../Control';
 
 const cx = classNames.bind(styles);
 
@@ -45,7 +45,7 @@ const MENU_ITEMS = [
 	},
 ];
 
-function Header({ active }) {
+function Header() {
 	return (
 		<header className={cx('wrapper')}>
 			<div className={cx('logo')}>
@@ -56,28 +56,12 @@ function Header({ active }) {
 				<Search />
 			</div>
 
-			<ul className={cx('control')}>
-				<Link to={config.routes.home}>
-					<Tippy
-						content='Home'
-						delay={[0, 150]}
-						placement='bottom'
-						animation='perspective'
-					>
-						<li className={cx('control__item', { active })}>
-							<FontAwesomeIcon icon={faHome} />
-						</li>
-					</Tippy>
-				</Link>
-				<li className={cx('control__item')}>
-					<FontAwesomeIcon icon={faAccusoft} />
-				</li>
-			</ul>
+			<Control active />
 
 			<div className={cx('action')}>
-				<button className={cx('action__btn', 'control__noti')}>
+				<button className={cx('action__btn', 'action__noti')}>
 					<FontAwesomeIcon icon={faBell} />
-					<span className={cx('control__count')}>69</span>
+					<span className={cx('action__count')}>69</span>
 				</button>
 
 				<Tippy
@@ -86,9 +70,9 @@ function Header({ active }) {
 					delay={[0, 150]}
 					animation='perspective'
 				>
-					<button className={cx('action__btn', 'control__messenger')}>
+					<button className={cx('action__btn', 'action__messenger')}>
 						<FontAwesomeIcon icon={faPaperPlane} />
-						<span className={cx('control__count')}>12</span>
+						<span className={cx('action__count')}>12</span>
 					</button>
 				</Tippy>
 				<Menu items={MENU_ITEMS}>
