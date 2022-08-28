@@ -2,7 +2,7 @@ import config from '~/config';
 
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
-import Search from '~/pages/Search';
+import Group from '~/pages/Group';
 import Profile from '~/pages/Profile';
 import Study from '~/pages/Study';
 
@@ -18,9 +18,8 @@ const publicRoutes = [
 		layout: null,
 	},
 	{
-		path: config.routes.search,
-		component: Search,
-		layout: null,
+		path: config.routes.group,
+		component: Group,
 	},
 	{
 		path: config.routes.profile,

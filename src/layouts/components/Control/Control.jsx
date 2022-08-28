@@ -1,6 +1,4 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
-import Tippy from '@tippyjs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +9,7 @@ import Menu, { MenuItem } from '../Menu';
 
 const cx = classNames.bind(styles);
 
-function Control({ active }) {
+function Control() {
 	return (
 		<div className={cx('wrapper')}>
 			<Menu>
@@ -19,10 +17,14 @@ function Control({ active }) {
 					to={config.routes.home}
 					icon={<FontAwesomeIcon icon={faHome} />}
 				/>
-
 				<MenuItem
 					to={config.routes.study}
 					icon={<FontAwesomeIcon icon={faAccusoft} />}
+				/>
+
+				<MenuItem
+					to={config.routes.group}
+					icon={<FontAwesomeIcon icon={faHome} />}
 				/>
 			</Menu>
 		</div>
