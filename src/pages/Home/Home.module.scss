@@ -1,6 +1,6 @@
 .wrapper {
 	display: flex;
-	padding: 0 16px;
+	padding: 0 16px 0 0;
 
 	.sidebar {
 		flex-grow: 1;
@@ -9,7 +9,6 @@
 	.newfeed {
 		flex-grow: 2;
 		padding: 0 64px;
-		background-color: palevioletred;
 	}
 
 	.notication {

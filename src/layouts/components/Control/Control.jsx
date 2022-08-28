@@ -1,7 +1,10 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAccusoft } from '@fortawesome/free-brands-svg-icons';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+	faGraduationCap,
+	faHome,
+	faUsersRectangle,
+} from '@fortawesome/free-solid-svg-icons';
 
 import config from '~/config';
 import styles from './Control.module.scss';
@@ -19,12 +22,12 @@ function Control() {
 				/>
 				<MenuItem
 					to={config.routes.study}
-					icon={<FontAwesomeIcon icon={faAccusoft} />}
+					icon={<FontAwesomeIcon icon={faGraduationCap} />}
 				/>
 
 				<MenuItem
 					to={config.routes.group}
-					icon={<FontAwesomeIcon icon={faHome} />}
+					icon={<FontAwesomeIcon icon={faUsersRectangle} />}
 				/>
 			</Menu>
 		</div>

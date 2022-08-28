@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 function Menu({ title, to, icon }) {
 	return (
 		<NavLink className={cx('menu-item')} to={to}>
-			{icon}
+			<div className={cx('icon')}>{icon}</div>
 			<span className={cx('title')}>{title}</span>
 		</NavLink>
 	);
