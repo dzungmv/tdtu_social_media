@@ -3,6 +3,8 @@ import config from '~/config';
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
 import Search from '~/pages/Search';
+import Profile from '~/pages/Profile';
+import Study from '~/pages/Study';
 
 const publicRoutes = [
 	{
@@ -19,6 +21,15 @@ const publicRoutes = [
 		path: config.routes.search,
 		component: Search,
 		layout: null,
+	},
+	{
+		path: config.routes.profile,
+		component: Profile,
+	},
+
+	{
+		path: config.routes.study,
+		component: Study,
 	},
 ];
 const privateRoutes = [];

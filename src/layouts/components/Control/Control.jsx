@@ -7,28 +7,25 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 import config from '~/config';
 import styles from './Control.module.scss';
+import Menu, { MenuItem } from '../Menu';
 
 const cx = classNames.bind(styles);
 
 function Control({ active }) {
 	return (
-		<ul className={cx('control')}>
-			<Link to={config.routes.home}>
-				<Tippy
-					content='Home'
-					delay={[0, 150]}
-					placement='bottom'
-					animation='perspective'
-				>
-					<li className={cx('control__item', { active })}>
-						<FontAwesomeIcon icon={faHome} />
-					</li>
-				</Tippy>
-			</Link>
-			<li className={cx('control__item')}>
-				<FontAwesomeIcon icon={faAccusoft} />
-			</li>
-		</ul>
+		<div className={cx('wrapper')}>
+			<Menu>
+				<MenuItem
+					to={config.routes.home}
+					icon={<FontAwesomeIcon icon={faHome} />}
+				/>
+
+				<MenuItem
+					to={config.routes.study}
+					icon={<FontAwesomeIcon icon={faAccusoft} />}
+				/>
+			</Menu>
+		</div>
 	);
 }
 

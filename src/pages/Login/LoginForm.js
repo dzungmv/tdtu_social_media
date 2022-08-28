@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
-import styles from './Login.module.scss';
+import { toast } from 'react-toastify';
 
+import styles from './Login.module.scss';
 import googleIcon from '~/assets/icons/google.png';
 
 const cx = classNames.bind(styles);
@@ -9,6 +10,8 @@ function LoginForm({ setForm }) {
 	const handleClick = () => {
 		setForm(false);
 	};
+
+	const notify = () => toast('Demo toast message!');
 	return (
 		<div>
 			<input
@@ -20,7 +23,9 @@ function LoginForm({ setForm }) {
 				type='password'
 				placeholder='Password'
 			/>
-			<button className={cx('login__control', 'login__btn')}>Sign In</button>
+			<button className={cx('login__control', 'login__btn')} onClick={notify}>
+				Sign In
+			</button>
 
 			<div className={cx('login__forgot')} onClick={handleClick}>
 				<span>Forgotten password?</span>

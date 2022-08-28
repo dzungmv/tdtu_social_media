@@ -1,0 +1,19 @@
+.wrapper {
+	display: flex;
+	padding: 0 16px;
+
+	.sidebar {
+		flex-grow: 1;
+	}
+
+	.newfeed {
+		flex-grow: 2;
+		padding: 0 64px;
+		background-color: palevioletred;
+	}
+
+	.notication {
+		flex-grow: 1;
+		background-color: rgb(137, 130, 238);
+	}
+}

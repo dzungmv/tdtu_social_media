@@ -59,17 +59,18 @@ function Header() {
 			<Control active />
 
 			<div className={cx('action')}>
-				<button className={cx('action__btn', 'action__noti')}>
-					<FontAwesomeIcon icon={faBell} />
-					<span className={cx('action__count')}>69</span>
-				</button>
-
 				<Tippy
-					content='Messenger'
+					content='Notifications'
 					placement='bottom'
-					delay={[0, 150]}
 					animation='perspective'
 				>
+					<button className={cx('action__btn', 'action__noti')}>
+						<FontAwesomeIcon icon={faBell} />
+						<span className={cx('action__count')}>69</span>
+					</button>
+				</Tippy>
+
+				<Tippy content='Messenger' placement='bottom' animation='perspective'>
 					<button className={cx('action__btn', 'action__messenger')}>
 						<FontAwesomeIcon icon={faPaperPlane} />
 						<span className={cx('action__count')}>12</span>
