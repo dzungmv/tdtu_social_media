@@ -17,7 +17,7 @@ function Home() {
 				<Newfeed />
 			</div>
 
-			<div className={cx('notication')}>This is notification</div>
+			<div className={cx('notication')}></div>
 		</div>
 	);
 }

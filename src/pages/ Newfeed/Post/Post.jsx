@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Post.module.scss';
 import Image from '~/components/Image';
+import catlofi from '~/assets/images/post-image.webp';
 
 const cx = classNames.bind(styles);
 
@@ -16,13 +17,10 @@ function Post() {
 						<span className={cx('info__facutly')}>Cong nghe thong tin</span>
 					</div>
 				</div>
-
-				<div className={cx('content')}>
-					<p className={cx('content__caption')}>
-						Lorem Ipsum is simply dummy text
-					</p>
-				</div>
+				<p className={cx('caption')}>Lorem Ipsum is simply dummy text...</p>
 			</div>
+			<img className={cx('image')} src={catlofi} alt='post-img' />
+			dov
 		</div>
 	);
 }

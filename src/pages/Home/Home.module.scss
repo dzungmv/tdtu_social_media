@@ -1,18 +1,18 @@
 .wrapper {
 	display: flex;
-	padding: 0 16px 0 0;
+	padding: 0 16px;
 
 	.sidebar {
-		flex-grow: 1;
+		flex: 1 0 25%;
 	}
 
 	.newfeed {
-		flex-grow: 2;
+		flex: 2 0 50%;
 		padding: 0 64px;
 	}
 
 	.notication {
-		flex-grow: 1;
+		flex: 1 0 25%;
 		background-color: rgb(137, 130, 238);
 	}
 }

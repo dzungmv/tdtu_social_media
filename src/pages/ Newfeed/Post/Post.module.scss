@@ -14,7 +14,7 @@
 				width: 40px;
 				height: 40px;
 				border-radius: 50%;
-				object-fit: cover;
+				object-fit: contain;
 				cursor: pointer;
 			}
 
@@ -41,9 +41,15 @@
 			}
 		}
 
-		.content {
-			.content__caption {
-			}
+		.caption {
+			margin-top: 8px;
 		}
+	}
+	.image {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		display: block;
+		cursor: pointer;
 	}
 }
