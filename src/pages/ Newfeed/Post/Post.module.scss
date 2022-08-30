@@ -52,4 +52,69 @@
 		display: block;
 		cursor: pointer;
 	}
+
+	.interac {
+		padding: 8px 16px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.interac__react {
+			display: flex;
+			align-items: center;
+
+			.interac_react-like {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				background-color: var(--primary-color);
+				font-size: 1.3rem;
+				color: #fff;
+			}
+
+			.interac_react-count {
+				padding-top: 2px;
+				color: rgba(22, 24, 35, 0.6);
+				margin-left: 8px;
+			}
+		}
+
+		.interac__comment-count {
+			font-size: 1.5rem;
+			color: rgba(22, 24, 35, 0.6);
+		}
+	}
+
+	.interacting {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 16px;
+
+		.interacting__handle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 1 0 calc(100% / 3);
+			padding: 8px 0;
+			border-radius: 8px;
+			font-size: 1.8rem;
+			cursor: pointer;
+			transition: background-color ease-in-out 200ms;
+
+			&:hover {
+				background-color: rgba(22, 24, 35, 0.03);
+			}
+
+			.interacting__handle-text {
+				margin-left: 8px;
+				font-size: 1.5rem;
+				color: rgba(22, 24, 35, 0.6);
+				font-weight: 600;
+			}
+		}
+	}
 }
