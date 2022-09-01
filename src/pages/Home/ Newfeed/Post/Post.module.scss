@@ -62,7 +62,10 @@
 
 		.caption {
 			margin-top: 8px;
-			text-align: justify;
+			font-size: 1.5rem;
+			text-align: start;
+			white-space: pre-wrap;
+			word-break: break-word;
 		}
 	}
 	.photo > img {
@@ -114,7 +117,8 @@
 		align-items: center;
 		padding: 0 16px;
 
-		.interacting__handle {
+		.interacting__handle,
+		.unlike {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -134,6 +138,13 @@
 				font-size: 1.5rem;
 				color: rgba(22, 24, 35, 0.6);
 				font-weight: 600;
+			}
+		}
+
+		.interacting__handle.liked {
+			color: var(--primary-color);
+			.interacting__handle-text {
+				color: var(--primary-color);
 			}
 		}
 	}
@@ -224,7 +235,7 @@
 					white-space: pre-wrap;
 					word-break: break-word;
 					-webkit-font-smoothing: antialiased;
-					line-height: 1.3333;
+					line-height: 18.6662px;
 				}
 			}
 

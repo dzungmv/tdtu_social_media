@@ -29,6 +29,12 @@ function Post({
 }) {
 	const [openComment, setOpenComment] = useState(false);
 	const [openOption, setOpenOption] = useState(false);
+	const [liked, setLiked] = useState('');
+
+	// Handle check liked
+	const handleClickLiked = (e) => {
+		setLiked(liked === '' ? 'liked' : '');
+	};
 
 	const handleOpenOption = () => {
 		setOpenOption(!openOption);
@@ -57,13 +63,8 @@ function Post({
 						</div>
 					</div>
 
-					<Menu interactive open={openOption}>
-						<div
-							className={cx('option')}
-							onClick={() => {
-								handleOpenOption();
-							}}
-						>
+					<Menu interactive disabled={openOption}>
+						<div className={cx('option')} onClick={handleOpenOption}>
 							<FontAwesomeIcon icon={faEllipsis} />
 						</div>
 					</Menu>
@@ -95,7 +96,10 @@ function Post({
 			<hr />
 
 			<div className={cx('interacting')}>
-				<div className={cx('interacting__handle')}>
+				<div
+					className={cx('interacting__handle', { liked })}
+					onClick={handleClickLiked}
+				>
 					<FontAwesomeIcon icon={faHeart} />
 					<span className={cx('interacting__handle-text')}>Like</span>
 				</div>
@@ -114,7 +118,7 @@ function Post({
 				</div>
 			</div>
 
-			<hr />
+			{openComment && <hr />}
 
 			{openComment && (
 				<div className={cx('comment')}>

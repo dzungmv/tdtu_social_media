@@ -1,0 +1,53 @@
+.wrapper {
+	padding: 20px;
+	position: fixed;
+	width: 25%;
+	max-width: inherit;
+
+	.heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.title {
+			font-size: 1.6rem;
+			color: var(--primary-color);
+			font-weight: 600;
+		}
+
+		.see-all {
+			font-size: 1.4rem;
+			cursor: pointer;
+			opacity: 0.6;
+
+			&:hover {
+				color: var(--primary-color);
+				text-decoration: underline;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.noti-item {
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+	border-radius: 8px;
+	transition: background-color ease-in-out 200ms;
+
+	&:hover {
+		background-color: rgb(241, 242, 245);
+		cursor: pointer;
+	}
+
+	.noti-item__title {
+		font-weight: 600;
+	}
+
+	.noti-item__time {
+		font-size: 1.2rem;
+		margin-top: 8px;
+		opacity: 0.5;
+	}
+}

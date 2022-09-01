@@ -13,7 +13,8 @@ const fakeData = [
 		avatar: '',
 		name: 'Ton Duc Thang',
 		faculty: 'Information Technology',
-		caption: 'In publishing and graphic design',
+		caption:
+			'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content',
 		photo: null,
 		likeCount: 12,
 		commentCount: 0,
@@ -25,7 +26,8 @@ const fakeData = [
 		avatar: '',
 		name: 'Alexander Viktor',
 		faculty: 'Information Technology',
-		caption: 'In publishing and graphic design',
+		caption:
+			'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content',
 		photo: catlofi,
 		likeCount: 1,
 		commentCount: 2,
@@ -68,8 +70,6 @@ const fakeData = [
 		commentContent: null,
 	},
 ];
-
-console.log(fakeData.catlofi);
 
 function Newfeed() {
 	return (
