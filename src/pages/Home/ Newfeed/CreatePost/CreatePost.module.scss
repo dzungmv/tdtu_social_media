@@ -44,9 +44,10 @@
 				align-items: center;
 				padding: 4px 8px;
 				border-radius: 8px;
+				color: #65676b;
+				font-weight: 600;
 				cursor: pointer;
 				transition: background-color ease-in-out 200ms;
-				font-weight: 600;
 
 				&:hover {
 					background-color: rgba(22, 24, 35, 0.07);

@@ -1,23 +1,19 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import classNames from 'classnames/bind';
-import { Tooltip } from 'react-tippy';
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faShare,
-	faHeart as heartIcon,
 	faSmile,
 	faCamera,
 	faEllipsis,
-	faPen,
-	faTrash,
-	faFlag,
+	faShare,
 } from '@fortawesome/free-solid-svg-icons';
 import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
 
-import Button from '~/components/Button';
 import styles from './Post.module.scss';
 import Image from '~/components/Image';
+import Header from './Header';
+import Interacted from './Interacted';
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +27,8 @@ function Post({
 	commentCount,
 	commentContent,
 }) {
-	const [openComment, setOpenComment] = useState(false);
+	const focusCommentInputRef = useRef();
+
 	const [liked, setLiked] = useState('');
 
 	// Handle check liked
@@ -39,8 +36,10 @@ function Post({
 		setLiked(liked === '' ? 'liked' : '');
 	};
 
+	const [openComment, setOpenComment] = useState(false);
+
 	// open comment and focus on comment input
-	const focusCommentInputRef = useRef();
+
 	const handleClickOpenComment = () => {
 		setOpenComment(!openComment);
 	};
@@ -53,49 +52,7 @@ function Post({
 	return (
 		<div className={cx('wrapper')}>
 			<div className={cx('container')}>
-				<div className={cx('heading')}>
-					<div className={cx('personally')}>
-						<Image className={cx('avatar')} src={avatar} />
-						<div className={cx('info')}>
-							<span className={cx('info__name')}>{name}</span>
-							<span className={cx('info__facutly')}>{faculty}</span>
-						</div>
-					</div>
-
-					<Tooltip
-						interactive
-						trigger='click'
-						position='bottom-end'
-						html={
-							<div className={cx('tool-tip')}>
-								<Button
-									className={cx('tool-tip__btn')}
-									leftIcon={<FontAwesomeIcon icon={faPen} />}
-								>
-									Edit post
-								</Button>
-
-								<Button
-									className={cx('tool-tip__btn')}
-									leftIcon={<FontAwesomeIcon icon={faTrash} />}
-								>
-									Delete post
-								</Button>
-
-								<Button
-									className={cx('tool-tip__btn')}
-									leftIcon={<FontAwesomeIcon icon={faFlag} />}
-								>
-									Report post
-								</Button>
-							</div>
-						}
-					>
-						<div className={cx('option')} onClick={() => {}}>
-							<FontAwesomeIcon icon={faEllipsis} />
-						</div>
-					</Tooltip>
-				</div>
+				<Header avatar={avatar} name={name} faculty={faculty} />
 				{caption && <p className={cx('caption')}>{caption}</p>}
 			</div>
 
@@ -103,25 +60,11 @@ function Post({
 				{photo && <img src={photo} alt='photo' />}
 			</div>
 
-			<div className={cx('interac')}>
-				<div className={cx('interac__react')}>
-					<div className={cx('interac_react-like')}>
-						<FontAwesomeIcon icon={heartIcon} />
-					</div>
-
-					<div className={cx('interac_react-count')}>
-						{likeCount > 1 && <span>{likeCount}</span>}
-					</div>
-				</div>
-				{commentCount > 0 && (
-					<div className={cx('interac__comment-count')}>
-						{commentCount} comments
-					</div>
-				)}
-			</div>
+			<Interacted likeCount={likeCount} commentCount={commentCount} />
 
 			<hr />
 
+			{/* Interacting */}
 			<div className={cx('interacting')}>
 				<div
 					className={cx('interacting__handle', { liked })}
