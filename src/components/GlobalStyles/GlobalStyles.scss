@@ -5,7 +5,10 @@
 	--text-color: #333;
 	--primary-boxshadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 	--box-boxshadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-	--font-family: 'ProximaNova', sans-serif;
+	--tooltip-boxshadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+		rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+		rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+	--font-family: 'SF', sans-serif;
 }
 
 * {
@@ -66,43 +69,114 @@ a {
 	color: var(--text-color);
 }
 
-// Font emmbed
+// SP pro
 @font-face {
-	font-family: ProximaNova;
-	src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Black.otf');
+	font-weight: 900;
+}
+
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-BlackItalic.otf');
+// 	font-weight: 900;
+// }
+
+@font-face {
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Bold.otf');
 	font-weight: 700;
 }
 
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-BoldItalic.otf');
+// 	font-weight: 700;
+// }
+
 @font-face {
-	font-family: ProximaNova;
-	src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Heavy.otf');
+	font-weight: 900;
+}
+
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-HeavyItalic.otf');
+// 	font-weight: 900;
+// }
+
+@font-face {
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Light.otf');
+	font-weight: 300;
+}
+
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-LightItalic.otf');
+// 	font-weight: 300;
+// }
+
+@font-face {
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Medium.otf');
+	font-weight: 500;
+}
+
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-MediumItalic.otf');
+// 	font-weight: 500;
+// }
+
+@font-face {
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Regular.otf');
 	font-weight: 400;
 }
 
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-RegularItalic.otf');
+// 	font-weight: 400;
+// }
+
 @font-face {
-	font-family: ProximaNova;
-	src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Semibold.otf');
 	font-weight: 600;
 }
 
-@font-face {
-	font-family: SofiaPro;
-	src: url('/assets/fonts/sofiapro-bold.woff');
-	font-weight: 700;
-}
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-SemiboldItalic.otf');
+// 	font-weight: 600;
+// }
 
 @font-face {
-	font-family: SofiaPro;
-	src: url('/assets/fonts/sofiapro-bold.woff2');
-	font-weight: 700;
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Thin.otf');
+	font-weight: 100;
 }
+
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-ThinItalic.otf');
+// 	font-weight: 100;
+// }
 
 @font-face {
-	font-family: SofiaPro;
-	src: url('/assets/fonts/sofiapro-semibold.otf');
-	font-weight: 600;
+	font-family: SF;
+	src: url('/assets/fonts/SF-Pro-Display-Ultralight.otf');
+	font-weight: 200;
 }
 
+// @font-face {
+// 	font-family: SF;
+// 	src: url('/assets/fonts/SF-Pro-Display-UltralightItalic.otf');
+// 	font-weight: 200;
+// }
 // Custom tippy
 body {
 	.tippy-box {

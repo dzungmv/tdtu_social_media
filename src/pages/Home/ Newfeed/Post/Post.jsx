@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import classNames from 'classnames/bind';
+import { Tooltip } from 'react-tippy';
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,10 +9,13 @@ import {
 	faSmile,
 	faCamera,
 	faEllipsis,
+	faPen,
+	faTrash,
+	faFlag,
 } from '@fortawesome/free-solid-svg-icons';
 import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
 
-import Menu from '~/components/Popper/Menu';
+import Button from '~/components/Button';
 import styles from './Post.module.scss';
 import Image from '~/components/Image';
 
@@ -28,16 +32,11 @@ function Post({
 	commentContent,
 }) {
 	const [openComment, setOpenComment] = useState(false);
-	const [openOption, setOpenOption] = useState(false);
 	const [liked, setLiked] = useState('');
 
 	// Handle check liked
 	const handleClickLiked = (e) => {
 		setLiked(liked === '' ? 'liked' : '');
-	};
-
-	const handleOpenOption = () => {
-		setOpenOption(!openOption);
 	};
 
 	// open comment and focus on comment input
@@ -63,11 +62,39 @@ function Post({
 						</div>
 					</div>
 
-					<Menu interactive disabled={openOption}>
-						<div className={cx('option')} onClick={handleOpenOption}>
+					<Tooltip
+						interactive
+						trigger='click'
+						position='bottom-end'
+						html={
+							<div className={cx('tool-tip')}>
+								<Button
+									className={cx('tool-tip__btn')}
+									leftIcon={<FontAwesomeIcon icon={faPen} />}
+								>
+									Edit post
+								</Button>
+
+								<Button
+									className={cx('tool-tip__btn')}
+									leftIcon={<FontAwesomeIcon icon={faTrash} />}
+								>
+									Delete post
+								</Button>
+
+								<Button
+									className={cx('tool-tip__btn')}
+									leftIcon={<FontAwesomeIcon icon={faFlag} />}
+								>
+									Report post
+								</Button>
+							</div>
+						}
+					>
+						<div className={cx('option')} onClick={() => {}}>
 							<FontAwesomeIcon icon={faEllipsis} />
 						</div>
-					</Menu>
+					</Tooltip>
 				</div>
 				{caption && <p className={cx('caption')}>{caption}</p>}
 			</div>

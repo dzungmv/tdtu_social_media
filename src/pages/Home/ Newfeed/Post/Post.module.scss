@@ -263,3 +263,26 @@
 		}
 	}
 }
+
+.tool-tip {
+	width: 230px;
+	border-radius: 8px;
+	box-shadow: var(--tooltip-boxshadow);
+	background-color: rgb(255, 255, 255);
+
+	.tool-tip__btn {
+		width: 100%;
+		padding: 8px;
+		font-size: 1.5rem;
+		font-family: var(--font-family);
+		margin-left: 0px !important;
+		display: flex;
+		justify-content: flex-start;
+		background-color: transparent;
+		transition: background-color ease-in-out 200ms;
+
+		&:hover {
+			background-color: rgb(22, 24, 35, 0.03);
+		}
+	}
+}
