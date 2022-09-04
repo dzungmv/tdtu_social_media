@@ -6,8 +6,6 @@ import 'tippy.js/animations/perspective.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
-	faPaperPlane,
-	faBell,
 	faKey,
 	faCircleQuestion,
 	faArrowRightFromBracket,
@@ -65,14 +63,14 @@ function Header() {
 					animation='perspective'
 				>
 					<button className={cx('action__btn', 'action__noti')}>
-						<FontAwesomeIcon icon={faBell} />
+						<i className={cx('fa-light', 'fa-bell')}></i>
 						<span className={cx('action__count')}>69</span>
 					</button>
 				</Tippy>
 
 				<Tippy content='Messenger' placement='bottom' animation='perspective'>
 					<button className={cx('action__btn', 'action__messenger')}>
-						<FontAwesomeIcon icon={faPaperPlane} />
+						<i className={cx('fa-light', 'fa-paper-plane')}></i>
 						<span className={cx('action__count')}>12</span>
 					</button>
 				</Tippy>

@@ -135,8 +135,14 @@
 			.interacting__handle-text {
 				margin-left: 8px;
 				font-size: 1.5rem;
-				color: rgba(22, 24, 35, 0.6);
-				font-weight: 600;
+				opacity: 0.7;
+				font-weight: 500;
+				-webkit-touch-callout: none; /* iOS Safari */
+				-webkit-user-select: none; /* Safari */
+				-khtml-user-select: none; /* Konqueror HTML */
+				-moz-user-select: none; /* Old versions of Firefox */
+				-ms-user-select: none; /* Internet Explorer/Edge */
+				user-select: none;
 			}
 		}
 
@@ -272,7 +278,7 @@
 	.tool-tip__btn {
 		width: 100%;
 		padding: 8px;
-		font-size: 1.5rem;
+		font-weight: 400;
 		font-family: var(--font-family);
 		margin-left: 0px !important;
 		display: flex;

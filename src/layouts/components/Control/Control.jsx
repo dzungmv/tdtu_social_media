@@ -1,10 +1,4 @@
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faGraduationCap,
-	faHome,
-	faUsersRectangle,
-} from '@fortawesome/free-solid-svg-icons';
 
 import config from '~/config';
 import styles from './Control.module.scss';
@@ -16,19 +10,13 @@ function Control() {
 	return (
 		<div className={cx('wrapper')}>
 			<Menu>
-				<MenuItem
-					to={config.routes.home}
-					icon={<FontAwesomeIcon icon={faHome} />}
-				/>
+				<MenuItem to={config.routes.home} icon={cx('fas', 'fa-home-alt')} />
 				<MenuItem
 					to={config.routes.study}
-					icon={<FontAwesomeIcon icon={faGraduationCap} />}
+					icon={cx('fa-duotone', 'fa-graduation-cap')}
 				/>
 
-				<MenuItem
-					to={config.routes.group}
-					icon={<FontAwesomeIcon icon={faUsersRectangle} />}
-				/>
+				<MenuItem to={config.routes.group} icon={cx('fas', 'fa-users')} />
 			</Menu>
 		</div>
 	);

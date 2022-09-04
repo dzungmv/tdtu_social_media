@@ -33,21 +33,21 @@ function Header({ avatar, name, faculty }) {
 					<div className={cx('tool-tip')}>
 						<Button
 							className={cx('tool-tip__btn')}
-							leftIcon={<FontAwesomeIcon icon={faPen} />}
+							leftIcon={<i className={cx('fa-regular', 'fa-pen')}></i>}
 						>
 							Edit post
 						</Button>
 
 						<Button
 							className={cx('tool-tip__btn')}
-							leftIcon={<FontAwesomeIcon icon={faTrash} />}
+							leftIcon={<i className={cx('fa-regular', 'fa-trash')}></i>}
 						>
 							Delete post
 						</Button>
 
 						<Button
 							className={cx('tool-tip__btn')}
-							leftIcon={<FontAwesomeIcon icon={faFlag} />}
+							leftIcon={<i className={cx('fa-regular', 'fa-flag')}></i>}
 						>
 							Report post
 						</Button>

@@ -2,13 +2,7 @@
 import classNames from 'classnames/bind';
 import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faSmile,
-	faCamera,
-	faEllipsis,
-	faShare,
-} from '@fortawesome/free-solid-svg-icons';
-import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Post.module.scss';
 import Image from '~/components/Image';
@@ -70,7 +64,7 @@ function Post({
 					className={cx('interacting__handle', { liked })}
 					onClick={handleClickLiked}
 				>
-					<FontAwesomeIcon icon={faHeart} />
+					<i className={cx('fa-light', 'fa-heart')}></i>
 					<span className={cx('interacting__handle-text')}>Like</span>
 				</div>
 
@@ -78,12 +72,12 @@ function Post({
 					className={cx('interacting__handle')}
 					onClick={handleClickOpenComment}
 				>
-					<FontAwesomeIcon icon={faComment} />
+					<i className={cx('fa-light', 'fa-comment')}></i>
 					<span className={cx('interacting__handle-text')}>Comment</span>
 				</div>
 
 				<div className={cx('interacting__handle')}>
-					<FontAwesomeIcon icon={faShare} />
+					<i className={cx('fal', 'fa-share')}></i>
 					<span className={cx('interacting__handle-text')}>Share</span>
 				</div>
 			</div>
@@ -101,8 +95,10 @@ function Post({
 								placeholder='Write a comment...'
 							/>
 							<div className={cx('icon')}>
-								<FontAwesomeIcon className={cx('icon__item')} icon={faSmile} />
-								<FontAwesomeIcon className={cx('icon__item')} icon={faCamera} />
+								<i
+									className={cx('fa-light', 'fa-face-smile', 'icon__item')}
+								></i>
+								<i className={cx('fa-light', 'fa-camera', 'icon__item')}></i>
 							</div>
 						</div>
 					</div>

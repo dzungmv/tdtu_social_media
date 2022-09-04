@@ -12,7 +12,7 @@ function MenuItem({ to, icon }) {
 			className={(nav) => cx('menu-item', { active: nav.isActive })}
 			to={to}
 		>
-			{icon}
+			<i className={icon}></i>
 		</NavLink>
 	);
 }
