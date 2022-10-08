@@ -1,0 +1,112 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+
+    .action__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: rgba(22, 24, 35, 0.08);
+        font-size: 1.8rem;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+    }
+
+    .avatar__wrapper {
+        padding: 3px;
+    }
+
+    .avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+    }
+}
+
+.tooltip {
+    .tooltip-container {
+        width: 300px;
+        padding: 8px 0 0 0;
+        .tooltip__item {
+            padding: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(22, 24, 35, 0.07);
+            }
+
+            .tooltip__item--icon {
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: rgba(22, 24, 35, 0.08);
+                margin-right: 8px;
+            }
+
+            .tooltip__item--label {
+                font-weight: 500;
+                color: var(--text-color);
+            }
+        }
+
+        .tooltip__item--logout {
+            &:hover {
+                color: #333;
+            }
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            margin-bottom: 8px;
+
+            .avatar {
+                width: 37px;
+                height: 37px;
+                border-radius: 50%;
+                object-fit: cover;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+
+                .name {
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                }
+
+                .id {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.3rem;
+                    margin-top: -3px;
+                    .student__id {
+                        margin-left: 4px;
+                        color: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}

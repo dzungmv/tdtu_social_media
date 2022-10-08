@@ -1,0 +1,77 @@
+.tooltip-container {
+    width: 420px;
+    padding: 8px 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-right: -50px; /* maximum width of scrollbar */
+    padding-right: 50px; /* maximum width of scrollbar */
+    overflow-y: scroll;
+
+    .title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    .tooltip-item {
+        padding: 8px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        transition: background-color ease-in-out 200ms;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(22, 24, 35, 0.07);
+        }
+
+        .tooltip-item__avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                .info__auth {
+                    font-weight: 500;
+                }
+
+                .info-content {
+                    font-weight: 500;
+                    margin-right: 4px;
+                }
+
+                .tooltip-item__time {
+                    font-size: 1.3rem;
+                    color: var(--primary-color);
+                }
+            }
+
+            .tooltip-item__check {
+                font-size: 0.9rem;
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .no-notification {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.7;
+    }
+}
+
+body .tippy-box {
+    margin-top: 0 !important;
+}

@@ -1,17 +1,17 @@
 .wrapper {
-	display: flex;
-	padding: 0 16px;
+    display: flex;
+    padding: 16px;
 
-	.sidebar {
-		flex: 1 0 25%;
-	}
+    .sidebar {
+        flex: 1 0 25%;
+    }
 
-	.newfeed {
-		flex: 2 0 50%;
-		padding: 0 40px;
-	}
+    .newfeed {
+        flex: 2 0 50%;
+        padding: 0 40px;
+    }
 
-	.notication {
-		flex: 1 0 25%;
-	}
+    .notication {
+        flex: 1 0 25%;
+    }
 }

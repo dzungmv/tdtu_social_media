@@ -10,36 +10,32 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function Login() {
-	const [form, setForm] = useState(true);
+    const [form, setForm] = useState(true);
 
-	console.log('re-render');
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('container')}>
+                <div className={cx('features')}>
+                    <img src={logo} className={cx('logo')} alt='logo' />
+                    <div className={cx('icon')}>
+                        <img
+                            className={cx('icon__item')}
+                            src={loginVector}
+                            alt='login vector'
+                        />
+                    </div>
+                </div>
 
-	return (
-		<div className={cx('wrapper')}>
-			<div className={cx('grid', 'wide')}>
-				<div className={cx('row', 'container')}>
-					<div className={cx('col', 'l-7', 'features')}>
-						<img src={logo} className={cx('logo')} alt='logo' />
-						<div className={cx('icon')}>
-							<img
-								className={cx('icon__item')}
-								src={loginVector}
-								alt='login vector'
-							/>
-						</div>
-					</div>
-
-					<div className={cx('col', 'l-5', 'login')}>
-						{form ? (
-							<LoginForm setForm={setForm} />
-						) : (
-							<ForgotForm setForm={setForm} />
-						)}
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+                <div className={cx('login')}>
+                    {form ? (
+                        <LoginForm setForm={setForm} />
+                    ) : (
+                        <ForgotForm setForm={setForm} />
+                    )}
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Login;

@@ -1,0 +1,186 @@
+.wrapper {
+    margin-top: 60px;
+
+    .header {
+        background-color: rgb(255, 255, 255);
+        border-bottom: 1px solid rgba(22, 24, 35, 0.1);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+        .header__container {
+            padding: 0 150px;
+            position: relative;
+
+            hr {
+                width: calc(100% - 60px) !important;
+                border-top: 0.08rem solid rgba(22, 24, 35, 0.2);
+            }
+            .cover__photo {
+                width: 100%;
+                height: 250px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .avatar {
+                padding: 0 0 0 30px;
+                position: absolute;
+                top: 210px;
+
+                .avatar__image {
+                    width: 168px;
+                    height: 168px;
+                    display: inline-block;
+                    border-radius: 50%;
+                    border: 3px solid #fff;
+                    background-clip: padding-box;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background-clip: padding-box;
+                    }
+                }
+            }
+
+            .info {
+                padding: 12px 30px 12px 210px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+
+                .info__left {
+                    .name {
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            font-size: 2.5rem;
+                            font-weight: 600;
+                        }
+                    }
+
+                    .friends {
+                        display: flex;
+                        align-items: center;
+                        padding: 8px 0;
+
+                        img {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            margin-right: -5px;
+                            border: 1px solid #fff;
+                            position: relative;
+                        }
+
+                        .friends-image {
+                            width: 32px;
+                            height: 32px;
+                            position: relative;
+                            border-radius: 50%;
+                            border: 1px solid #fff;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+
+                            img {
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                width: 100%;
+                            }
+
+                            i {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                color: #fff;
+                                font-size: 1.3rem;
+                                font-weight: 800;
+                            }
+                        }
+                    }
+
+                    .count__friend {
+                        padding: 0 0 0 4px;
+
+                        opacity: 0.4;
+                        font-weight: 500;
+                    }
+                }
+
+                .info__right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .info__action {
+                        display: flex;
+                        align-items: center;
+
+                        .info__action-btn {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 120px;
+                            height: 35px;
+                            margin-left: 8px;
+                            padding: 5px;
+                            border: none;
+                            outline: none;
+                            border-radius: 8px;
+                            background-color: rgba(22, 24, 35, 0.1);
+                            color: black;
+                            font-weight: 500;
+                            opacity: 0.9;
+
+                            &:nth-child(1) {
+                                background-color: var(--primary-color);
+                                color: #fff;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                                opacity: 1;
+                            }
+
+                            i {
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .navigation {
+                padding: 8px 0 8px 30px;
+                display: flex;
+                align-items: center;
+
+                .navigation__item {
+                    padding: 12px;
+                    border-radius: 8px;
+                    margin-right: 8px;
+                    font-weight: 500;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba(22, 24, 35, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}

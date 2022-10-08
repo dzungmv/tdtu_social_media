@@ -7,19 +7,19 @@ import styles from './Menu.module.scss';
 const cx = classNames.bind(styles);
 
 function MenuItem({ to, icon }) {
-	return (
-		<NavLink
-			className={(nav) => cx('menu-item', { active: nav.isActive })}
-			to={to}
-		>
-			<i className={icon}></i>
-		</NavLink>
-	);
+    return (
+        <NavLink
+            className={(nav) => cx('menu-item', { active: nav.isActive })}
+            to={to}
+        >
+            <i className={icon}></i>
+        </NavLink>
+    );
 }
 
 MenuItem.propTypes = {
-	to: PropTypes.string.isRequired,
-	icon: PropTypes.node.isRequired,
+    to: PropTypes.string.isRequired,
+    icon: PropTypes.node.isRequired,
 };
 
 export default MenuItem;

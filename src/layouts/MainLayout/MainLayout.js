@@ -6,18 +6,18 @@ import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
 
 function MainLayout({ children }) {
-	return (
-		<div className={cx('wrapper')}>
-			<Header />
-			<div className={cx('container')}>
-				<div className={cx('content')}>{children}</div>
-			</div>
-		</div>
-	);
+    return (
+        <div className={cx('wrapper')}>
+            <Header />
+            <div className={cx('container')}>
+                <div className={cx('content')}>{children}</div>
+            </div>
+        </div>
+    );
 }
 
 MainLayout.propTypes = {
-	children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default MainLayout;

@@ -1,18 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import App from '~/App';
 import GlobalStyles from '~/components/GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import { ToastContainer } from 'react-toastify';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 root.render(
-	<GlobalStyles>
-		<>
-			<App />
-			<ToastContainer />
-		</>
-	</GlobalStyles>
+    <GlobalStyles>
+        <>
+            <App />
+            <ToastContainer />
+        </>
+    </GlobalStyles>
 );
 
 // If you want to start measuring performance in your app, pass a function
