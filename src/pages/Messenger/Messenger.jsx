@@ -66,6 +66,23 @@ function Messenger() {
                                 Ton Duc Thang
                             </div>
                         </div>
+
+                        <div className={cx('action')}>
+                            <div className={cx('action__icon')}>
+                                <i className={cx('fa-solid', 'fa-phone')}></i>
+                            </div>
+                            <div className={cx('action__icon')}>
+                                <i className={cx('fa-solid', 'fa-video')}></i>
+                            </div>
+                            <div className={cx('action__icon')}>
+                                <i
+                                    className={cx(
+                                        'fa-solid',
+                                        'fa-circle-exclamation'
+                                    )}
+                                ></i>
+                            </div>
+                        </div>
                     </div>
 
                     <div className={cx('messenger__container')}>
@@ -80,7 +97,29 @@ function Messenger() {
                         </div>
                     </div>
 
-                    <div className={cx('container__right--footer')}>Alo</div>
+                    <div className={cx('container__right--footer')}>
+                        <div className={cx('upload__image')}>
+                            <input type='file' id='upload-file' hidden />
+                            <label for='upload-file' className={cx('icon')}>
+                                <i
+                                    className={cx(
+                                        'fa-sharp',
+                                        'fa-solid fa-images'
+                                    )}
+                                ></i>
+                            </label>
+                        </div>
+                        <div className={cx('input__text')}>
+                            <input type='text' />
+                        </div>
+                        <div className={cx('like__section')}>
+                            <div className={cx('icon')}>
+                                <i class={cx('fa-solid', 'fa-heart')}></i>
+                            </div>
+                        </div>
+
+                        <button hidden>Send</button>
+                    </div>
                 </div>
             </div>
         </div>

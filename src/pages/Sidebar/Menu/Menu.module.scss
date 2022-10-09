@@ -1,26 +1,26 @@
 .menu-item {
-	display: flex;
-	align-items: center;
-	font-weight: 500;
-	padding: 8px;
-	border-radius: 4px;
-	transition: background-color ease-in-out 200ms;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color ease-in-out 200ms;
 
-	&:hover {
-		background-color: rgba(22, 24, 35, 0.03);
-	}
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
 
-	.icon {
-		width: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: blue;
-	}
+    .icon {
+        width: 37px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: blue;
+    }
 
-	.title {
-		margin-left: 8px;
-		font-size: 1.6rem;
-		font-weight: 500;
-	}
+    .title {
+        margin-left: 8px;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
 }

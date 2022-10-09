@@ -114,12 +114,22 @@
         height: 60px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding: 8px;
         box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
 
         .user {
             display: flex;
             align-items: center;
+            width: fit-content;
+            height: fit-content;
+            padding: 5px;
+            border-radius: 8px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--hover-color);
+            }
 
             .user__avatar {
                 width: 40px;
@@ -133,6 +143,7 @@
                     border-radius: 50%;
                     object-fit: cover;
                     margin-right: 16px;
+                    cursor: none;
                 }
             }
 
@@ -141,12 +152,27 @@
                 font-weight: 500;
             }
         }
-    }
 
-    .container__right--footer {
-        width: 100%;
-        height: 60px;
-        background-color: aqua;
+        .action {
+            display: flex;
+            align-items: center;
+            .action__icon {
+                width: 40px;
+                height: 40px;
+                margin-left: 8px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: var(--primary-color);
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(22, 24, 35, 0.07);
+                }
+            }
+        }
     }
 
     .messenger__container {
@@ -181,6 +207,65 @@
                 margin-top: 8px;
             }
         }
+    }
+
+    .container__right--footer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 12px;
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(22, 24, 35, 0.07);
+            }
+        }
+
+        .upload__image {
+            flex: 1 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input__text {
+            flex: 2 0 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            border-radius: 25px;
+            padding: 0 16px;
+            background-color: rgb(22, 24, 35, 0.09);
+
+            input {
+                width: 100%;
+                height: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+        }
+
+        .like__section {
+            flex: 1 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        // .btn__send {
+        //     display: none;
+        // }
     }
 }
 
