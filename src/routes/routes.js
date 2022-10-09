@@ -6,6 +6,7 @@ import Group from '~/pages/Group';
 import Profile from '~/pages/Profile/Profile';
 import Study from '~/pages/Study';
 import Friend from '~/pages/Friend';
+import Messenger from '~/pages/Messenger';
 import Chatbot from '~/pages/Chatbot';
 
 const publicRoutes = [
@@ -38,6 +39,10 @@ const publicRoutes = [
     {
         path: config.routes.chatbot,
         component: Chatbot,
+    },
+    {
+        path: config.routes.messenger,
+        component: Messenger,
     },
 ];
 const privateRoutes = [];

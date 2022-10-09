@@ -50,12 +50,16 @@ function Header() {
                     placement='bottom'
                     animation='perspective'
                 >
-                    <div className={cx('action__wrapper')}>
-                        <button className={cx('action__item')}>
-                            <i className={cx('fa-solid', 'fa-paper-plane')}></i>
-                            <span className={cx('action__count')}>12</span>
-                        </button>
-                    </div>
+                    <Link to={'/messenger'}>
+                        <div className={cx('action__wrapper')}>
+                            <button className={cx('action__item')}>
+                                <i
+                                    className={cx('fa-solid', 'fa-paper-plane')}
+                                ></i>
+                                <span className={cx('action__count')}>12</span>
+                            </button>
+                        </div>
+                    </Link>
                 </Tippy>
 
                 <Profile />

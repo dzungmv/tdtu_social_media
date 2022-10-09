@@ -27,7 +27,6 @@ function Tooltipes() {
 
                 <div className={cx('tooltip__item')}>
                     <div className={cx('tooltip__item--icon')}>
-                        {' '}
                         <i className={cx('fa-regular', 'fa-gear')}></i>
                     </div>
                     <span className={cx('tooltip__item--label')}>
@@ -35,7 +34,20 @@ function Tooltipes() {
                     </span>
                 </div>
 
-                <hr />
+                <div className={cx('tooltip__item')}>
+                    <div className={cx('tooltip__item--icon')}>
+                        <i
+                            className={cx(
+                                'fa-regular',
+                                'fa-comment-exclamation'
+                            )}
+                        ></i>
+                    </div>
+                    <span className={cx('tooltip__item--label')}>
+                        Give feedback
+                    </span>
+                </div>
+
                 <Link to='/login'>
                     <div
                         className={cx('tooltip__item', 'tooltip__item--logout')}
