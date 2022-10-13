@@ -1,7 +1,7 @@
 import config from '~/config';
 
 import Home from '~/pages/Home';
-import Login from '~/pages/Login';
+import Login from '~/pages/Auth';
 import Group from '~/pages/Group';
 import Profile from '~/pages/Profile/Profile';
 import Study from '~/pages/Study';

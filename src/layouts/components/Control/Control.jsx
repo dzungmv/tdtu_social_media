@@ -6,7 +6,7 @@ import Menu, { MenuItem } from '../Menu';
 
 const cx = classNames.bind(styles);
 
-function Control({ active }) {
+function Control() {
     return (
         <div className={cx('wrapper')}>
             <Menu>

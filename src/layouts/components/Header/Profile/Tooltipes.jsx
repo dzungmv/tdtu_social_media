@@ -6,12 +6,15 @@ import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
-function Tooltipes() {
+function Tooltipes({ nodeRef }) {
     return (
         <div className={cx('tooltip')}>
             <div className={cx('tooltip-container')}>
-                <Link to={'/profile'}>
-                    <div className={cx('tooltip__item', 'profile')}>
+                <Link to={'/profile'} onClick={nodeRef.current._tippy.hide()}>
+                    <div
+                        className={cx('tooltip__item', 'profile')}
+                        // onClick={handleClickProfile}
+                    >
                         <Image className={cx('avatar')} src='' />
                         <div className={cx('info')}>
                             <span className={cx('name')}>Ton Duc Thang</span>

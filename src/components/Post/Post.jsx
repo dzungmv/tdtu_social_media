@@ -158,71 +158,63 @@ function Post({
                 </div>
             </div>
 
-            {openComment && <hr />}
+            <hr />
 
-            {openComment && (
-                <div className={cx('comment')}>
-                    <div className={cx('comment__commenting')}>
-                        <Image className={cx('avatar')} src={avatar} />
-                        <div className={cx('comment__commenting-input')}>
-                            <input
-                                ref={focusCommentInputRef}
-                                className={cx('input')}
-                                placeholder='Write a comment...'
-                            />
-                            <div className={cx('icon')}>
-                                <i
-                                    className={cx(
-                                        'fa-light',
-                                        'fa-face-smile',
-                                        'icon__item'
-                                    )}
-                                ></i>
-                                <i
-                                    className={cx(
-                                        'fa-light',
-                                        'fa-camera',
-                                        'icon__item'
-                                    )}
-                                ></i>
+            <div className={cx('comment')}>
+                <div className={cx('comment__commenting')}>
+                    <Image className={cx('avatar')} src={avatar} />
+                    <div className={cx('comment__commenting-input')}>
+                        <input
+                            ref={focusCommentInputRef}
+                            className={cx('input')}
+                            placeholder='Write a comment...'
+                        />
+                        <div className={cx('icon')}>
+                            <i
+                                className={cx(
+                                    'fa-light',
+                                    'fa-face-smile',
+                                    'icon__item'
+                                )}
+                            ></i>
+                            <i
+                                className={cx(
+                                    'fa-light',
+                                    'fa-camera',
+                                    'icon__item'
+                                )}
+                            ></i>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Comment user */}
+
+                {commentContent && (
+                    <div className={cx('comment__section')}>
+                        <div>
+                            <Image src={avatar} className={cx('avatar')} />
+                        </div>
+                        <div className={cx('comment__section-content')}>
+                            <span
+                                className={cx('comment__section-content-name')}
+                            >
+                                {name}
+                            </span>
+
+                            <p className={cx('comment__section-content-text')}>
+                                {commentContent}
+                            </p>
+                        </div>
+
+                        <div className={cx('menu')}>
+                            <div className={cx('menu__icon')}>
+                                <FontAwesomeIcon icon={faEllipsis} />
                             </div>
                         </div>
                     </div>
-
-                    {/* Comment user */}
-
-                    {commentContent && (
-                        <div className={cx('comment__section')}>
-                            <div>
-                                <Image src={avatar} className={cx('avatar')} />
-                            </div>
-                            <div className={cx('comment__section-content')}>
-                                <span
-                                    className={cx(
-                                        'comment__section-content-name'
-                                    )}
-                                >
-                                    {name}
-                                </span>
-
-                                <p
-                                    className={cx(
-                                        'comment__section-content-text'
-                                    )}
-                                >
-                                    {commentContent}
-                                </p>
-                            </div>
-
-                            <div className={cx('menu')}>
-                                <div className={cx('menu__icon')}>
-                                    <FontAwesomeIcon icon={faEllipsis} />
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
+import { roundArrow } from 'tippy.js';
 import 'tippy.js/themes/light.css';
 import 'tippy.js/dist/svg-arrow.css';
 
@@ -8,6 +9,69 @@ import Image from '~/components/Image';
 import Tooltipes from './ActionTippy';
 
 const cx = classNames.bind(styles);
+
+const fake_data_messenger = [
+    {
+        id: 1,
+        name: 'Ton Duc Thang',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 2,
+        name: 'Nguyen Anh Tuan',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 3,
+        name: 'Nguyen Anh Binh',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 4,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 5,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 6,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 7,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 8,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 9,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+    {
+        id: 10,
+        name: 'Hoang Bao',
+        avatar: '',
+        message: 'You are friend on facebook',
+    },
+];
 
 function Messenger() {
     return (
@@ -19,40 +83,55 @@ function Messenger() {
                     </div>
 
                     <div className={cx('messenger')}>
-                        <div className={cx('messenger__item')}>
-                            <div className={cx('messenger__item--avatar')}>
-                                <Image src={''} />
-                            </div>
-                            <div className={cx('messenger__item--content')}>
-                                <div className={cx('info')}>
-                                    <div className={cx('info__name')}>
-                                        Ton Duc Thang
+                        {fake_data_messenger.map((data, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className={cx('messenger__item')}
+                                >
+                                    <div
+                                        className={cx(
+                                            'messenger__item--avatar'
+                                        )}
+                                    >
+                                        <Image src={data.avatar} />
                                     </div>
-                                    <div className={cx('info__mess')}>
-                                        You're friend on facebook
+                                    <div
+                                        className={cx(
+                                            'messenger__item--content'
+                                        )}
+                                    >
+                                        <div className={cx('info')}>
+                                            <div className={cx('info__name')}>
+                                                {data.name}
+                                            </div>
+                                            <div className={cx('info__mess')}>
+                                                {data.message}
+                                            </div>
+                                        </div>
                                     </div>
+                                    <Tippy
+                                        arrow={roundArrow}
+                                        content={<Tooltipes />}
+                                        placement='bottom'
+                                        interactive
+                                        theme='light'
+                                        trigger='click'
+                                    >
+                                        <div className={cx('action')}>
+                                            <div className={cx('action__btn')}>
+                                                <i
+                                                    className={cx(
+                                                        'fa-regular',
+                                                        'fa-ellipsis'
+                                                    )}
+                                                ></i>
+                                            </div>
+                                        </div>
+                                    </Tippy>
                                 </div>
-                            </div>
-                            <Tippy
-                                arrow={true}
-                                content={<Tooltipes />}
-                                placement='bottom'
-                                interactive
-                                theme='light'
-                                trigger='click'
-                            >
-                                <div className={cx('action')}>
-                                    <div className={cx('action__btn')}>
-                                        <i
-                                            className={cx(
-                                                'fa-regular',
-                                                'fa-ellipsis'
-                                            )}
-                                        ></i>
-                                    </div>
-                                </div>
-                            </Tippy>
-                        </div>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className={cx('container__right')}>
@@ -100,7 +179,7 @@ function Messenger() {
                     <div className={cx('container__right--footer')}>
                         <div className={cx('upload__image')}>
                             <input type='file' id='upload-file' hidden />
-                            <label for='upload-file' className={cx('icon')}>
+                            <label htmlFor='upload-file' className={cx('icon')}>
                                 <i
                                     className={cx(
                                         'fa-sharp',
@@ -110,11 +189,11 @@ function Messenger() {
                             </label>
                         </div>
                         <div className={cx('input__text')}>
-                            <input type='text' />
+                            <input type='text' placeholder='Aa' />
                         </div>
                         <div className={cx('like__section')}>
                             <div className={cx('icon')}>
-                                <i class={cx('fa-solid', 'fa-heart')}></i>
+                                <i className={cx('fa-solid', 'fa-heart')}></i>
                             </div>
                         </div>
 

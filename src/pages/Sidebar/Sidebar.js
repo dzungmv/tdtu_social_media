@@ -4,7 +4,6 @@ import styles from './Sidebar.module.scss';
 import config from '~/config';
 import Image from '~/components/Image';
 
-import chatbot from '~/assets/icons/chatbot.png';
 import friends from '~/assets/icons/friends.png';
 
 const cx = classNames.bind(styles);
@@ -43,7 +42,7 @@ function Sidebar() {
                 />
             </Menu>
 
-            <Menu>
+            {/* <Menu>
                 <MenuItem
                     title='Smart assistant'
                     to={config.routes.chatbot}
@@ -52,7 +51,7 @@ function Sidebar() {
                     }
                 />
             </Menu>
-            {/* <FontAwesomeIcon icon={faMailchimp} /> */}
+            <FontAwesomeIcon icon={faMailchimp} /> */}
         </aside>
     );
 }

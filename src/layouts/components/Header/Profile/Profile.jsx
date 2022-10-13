@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -11,10 +12,12 @@ import Tooltipes from './Tooltipes';
 const cx = classNames.bind(styles);
 
 function Profile() {
+    const nodeRef = useRef(null);
     return (
         <div className={cx('wrapper')}>
             <Tippy
-                content={<Tooltipes />}
+                ref={nodeRef}
+                content={<Tooltipes nodeRef={nodeRef} />}
                 trigger='click'
                 placement='bottom-start'
                 interactive

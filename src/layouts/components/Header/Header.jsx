@@ -54,7 +54,10 @@ function Header() {
                         <div className={cx('action__wrapper')}>
                             <button className={cx('action__item')}>
                                 <i
-                                    className={cx('fa-solid', 'fa-paper-plane')}
+                                    className={cx(
+                                        'fa-brands',
+                                        'fa-facebook-messenger'
+                                    )}
                                 ></i>
                                 <span className={cx('action__count')}>12</span>
                             </button>

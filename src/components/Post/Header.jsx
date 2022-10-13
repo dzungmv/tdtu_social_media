@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/themes/light.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Post.module.scss';
-import Button from '~/components/Button';
 import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
@@ -13,7 +13,7 @@ function Header({ avatar, name, faculty }) {
     return (
         <div className={cx('heading')}>
             <div className={cx('personally')}>
-                <Image className={cx('avatar')} src={avatar.toString()} />
+                <Image className={cx('avatar')} src={avatar} />
 
                 <div className={cx('info')}>
                     <span className={cx('info__name')}>{name}</span>
@@ -21,45 +21,37 @@ function Header({ avatar, name, faculty }) {
                 </div>
             </div>
 
-            <Tooltip
-                interactive
-                trigger='click'
-                position='bottom-end'
-                html={
-                    <div className={cx('tool-tip')}>
-                        <Button
-                            className={cx('tool-tip__btn')}
-                            leftIcon={
-                                <i className={cx('fa-regular', 'fa-pen')}></i>
-                            }
-                        >
-                            Edit post
-                        </Button>
-
-                        <Button
-                            className={cx('tool-tip__btn')}
-                            leftIcon={
-                                <i className={cx('fa-regular', 'fa-trash')}></i>
-                            }
-                        >
-                            Delete post
-                        </Button>
-
-                        <Button
-                            className={cx('tool-tip__btn')}
-                            leftIcon={
-                                <i className={cx('fa-regular', 'fa-flag')}></i>
-                            }
-                        >
-                            Report post
-                        </Button>
+            <Tippy
+                content={
+                    <div className={cx('tooltip')}>
+                        <div className={cx('tooltip__item')}>
+                            <i className={cx('fa-regular', 'fa-pen')}></i>
+                            <span>Edit post</span>
+                        </div>
+                        <div className={cx('tooltip__item')}>
+                            <i className={cx('fa-regular', ' fa-trash')}></i>
+                            <span>Delete post</span>
+                        </div>
+                        <div className={cx('tooltip__item')}>
+                            <i
+                                className={cx(
+                                    'fa-regular',
+                                    ' fa-message-exclamation'
+                                )}
+                            ></i>
+                            <span>Report</span>
+                        </div>
                     </div>
                 }
+                placement='bottom'
+                trigger={'click'}
+                theme='light'
+                interactive
             >
                 <div className={cx('option')}>
                     <FontAwesomeIcon icon={faEllipsis} />
                 </div>
-            </Tooltip>
+            </Tippy>
         </div>
     );
 }
