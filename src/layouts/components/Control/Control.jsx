@@ -12,7 +12,7 @@ function Control() {
             <Menu>
                 <MenuItem
                     to={config.routes.home}
-                    icon={cx('fal', 'fa-home-alt')}
+                    icon={cx('fa-sharp', 'fa-solid', 'fa-house')}
                 />
                 <MenuItem
                     to={config.routes.study}
